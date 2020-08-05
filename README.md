@@ -1,24 +1,57 @@
-# README
+## テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column | Type       | Options         |
+| ------ | ---------- | --------------- |
+|familyname | string  | null:false  |
+|lastname   | string  | null:false  |
+|kana_familyname | string | null:false |
+|kana_lastname   | string | null:false |
+|email | string  | null:false |
+| passwword | string | null:false |
+| date | date | null:false  |
 
-* Ruby version
+### Association
+- has_many:items
+- has_one:purchase
 
-* System dependencies
+## items
+| Column | Type       | Options                   |
+| ------ | ---------- | --------------------------|
+| image       | string     | null:false |
+| name        | string     | null:false |
+| comment     | string     | null:false |
+| category_id | integer    | null:false |
+| status_id   | integer    | null:false |
+| feee_id     | integer    | null:false |
+| day_id      | integer    | null:false |
+| price       | string     | null:false |
+| user        | references | null:false, foreign_key: true|
 
-* Configuration
+### Association
+- belong_to:user
+- has_one:purchase_address
 
-* Database creation
+## purchase_address
 
-* Database initialization
+| Column | Type       | Options         |
+| ------ | ---------- | ----------------|
+| prefectures_id | integer | nill:false |
+| city    | string  | null:false |
+| address | string  | null:false |
+| build   | string  | null:false |
+| tellnum | string  | null:false | 
+| postnum | string  | null:false |
 
-* How to run the test suite
+### Association
+- belong_to:items
 
-* Services (job queues, cache servers, search engines, etc.)
+## purchase 
+| Column | Type       | Options         |
+| ------ | ---------- | ----------------|
+|user    | references | null:false, foreign_key: true |
+|item    | references | null:false, foreign_key: true |
 
-* Deployment instructions
-
-* ...
+### Association
+- belong_to:user
