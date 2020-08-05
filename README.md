@@ -4,10 +4,10 @@
 
 | Column | Type       | Options         |
 | ------ | ---------- | --------------- |
-|familyname        | string  | null:false  |
-|lastname          | string  | null:false  |
-|kana_familyname   | string  | null:false |
-|kana_lastname     | string  | null:false |
+|family_name        | string  | null:false  |
+|last_name          | string  | null:false  |
+|kana_family_name   | string  | null:false |
+|kana_last_name     | string  | null:false |
 |nickname          | string  | null:false |
 |email             | string  | null:false |
 | passwword        | string  | null:false |
@@ -33,7 +33,7 @@
 ### Association
 - belong_to:user
 - has_one:purchase_address
-- belong_to:purchase
+- has_one:purchase
 
 ## purchase_address
 
