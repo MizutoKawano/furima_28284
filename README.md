@@ -32,7 +32,7 @@
 | user        | references | null:false, foreign_key: true|
 
 ### Association
-- belong_to:user
+- belongs_to:user
 - has_one:purchase_address
 - has_one:purchase
 
@@ -49,7 +49,7 @@
 | item           | references | null:false, foreign_key: true|
 
 ### Association
-- belong_to:item
+- belongs_to:item
 
 ## purchase 
 | Column | Type       | Options         |
@@ -58,5 +58,5 @@
 |item    | references | null:false, foreign_key: true |
 
 ### Association
-- belong_to:user
-- belong_to:item
+- belongs_to:user
+- belongs_to:item
