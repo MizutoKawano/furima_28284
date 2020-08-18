@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+         has_many :items
  
      with_options presence: true do
 
@@ -19,6 +21,9 @@ class User < ApplicationRecord
      validates :email,               uniqueness: true, format: { with: /#{email_word}/, message: 'は＠で入力して下さい。' }
      validates :birthday
    end
+    
+   pass_word=/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
+
      validates :password,            length: { minimum: 6 }, format: { with: /#{pass_word}/, message: 'は英数字で入力して下さい。' }
  end
  

@@ -25,7 +25,7 @@
 | comment     | text       | null:false |
 | category_id | integer    | null:false |
 | status_id   | integer    | null:false |
-| feee_id     | integer    | null:false |
+| fee_id     | integer    | null:false |
 | aria_id     | integer    | null:false |
 | day_id      | integer    | null:false |
 | price       | integer    | null:false |
