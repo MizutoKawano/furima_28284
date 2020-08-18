@@ -10,17 +10,18 @@ class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :user
 
-
-  validates :image, :name, :category, :status, :fee, :arium, :day, :price,  presence: true
-
   validates :category_id, :status_id, :fee_id, :arium_id, :day_id, numericality: { other_than: 1 }
-
 
   with_options presence: true do
 
     validates :image
     validates :name 
     validates :comment
+    validates :category
+    validates :status
+    validates :fee
+    validates :arium
+    validates :day
     validates :price,  inclusion: { in: (300..9999999)}
   end
 end

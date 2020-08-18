@@ -56,11 +56,16 @@ describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
         end
-        it "価格の範囲が300-9999999まででないと登録できない"do
+        it "価格の範囲が300以上でないと登録できない"do
         @item.price = 100
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
        end
+        it "価格の範囲が9999999以下出ないと登録できない"do
+        @item.price = 10000000
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        end
         it "ユーザーが紐付いていない出品できない" do
         @item.user = nil
         @item.valid?

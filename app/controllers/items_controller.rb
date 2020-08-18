@@ -17,12 +17,6 @@ end
   end
  end
 
-#  def update
-#   @item =Item.find(item_params)
-#   @item.update params.require(:item),permit(images: [])
-#   redirect_to @item
-#  end
-
 private
 def move_to_index
   redirect_to user_session_path  unless user_signed_in?
