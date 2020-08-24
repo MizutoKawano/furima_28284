@@ -31,6 +31,11 @@ end
   @item =Item.find(params[:id])
  end
 
+ def update
+  item =Item.find(params[:id])
+  item.update(items_params)
+ end
+
 private
 def move_to_index
   redirect_to user_session_path  unless user_signed_in?
