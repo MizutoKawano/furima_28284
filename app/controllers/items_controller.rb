@@ -33,7 +33,7 @@ end
  def update
   if @item.update(item_params)
     redirect_to root_path
-    else
+  else
     render :edit
   end
  end
