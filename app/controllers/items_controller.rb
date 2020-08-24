@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
    before_action :move_to_index, except: [:index, :show]
   def index
-   @items = Item.all.order("created_at DESC")
-   
+   @items = Item.all.order("created_at DESC")  
 end
 
 def show
@@ -22,6 +21,7 @@ end
   end
  end
 
+
  def destroy
   @item =Item.find(params[:id])
   @item.destroy
@@ -32,8 +32,12 @@ end
  end
 
  def update
-  item =Item.find(params[:id])
-  item.update(items_params)
+  @item =Item.find(params[:id])
+  if @item.update(item_params)
+    redirect_to root_path
+    else
+      render :edit
+  end
  end
 
 private
