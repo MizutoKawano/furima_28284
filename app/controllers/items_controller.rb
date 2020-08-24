@@ -27,6 +27,10 @@ end
   @item.destroy
  end
 
+ def edit
+  @item =Item.find(params[:id])
+ end
+
 private
 def move_to_index
   redirect_to user_session_path  unless user_signed_in?
