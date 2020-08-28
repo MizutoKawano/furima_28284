@@ -3,6 +3,7 @@ class ItemTransaction
   attr_accessor :postnum, :arium_id, :city, :house_number, :building_name, :tellnum, :user_id, :item_id, :token
 
   with_options presence: true do
+    
     post_number = /\A\d{3}[-]\d{4}\z/
 
     validates :arium_id
