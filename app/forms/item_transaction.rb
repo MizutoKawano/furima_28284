@@ -10,7 +10,7 @@ class ItemTransaction
     validates :house_number
     validates :tellnum,        length: { maximum: 11 }
     validates :postnum,        format: { with: /#{post_number}/ }
-
+    validates :token 
     validates :arium_id, numericality: { other_than: 1 }
   end
 

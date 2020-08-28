@@ -5,5 +5,7 @@ FactoryBot.define do
     house_number   { '渋谷'   }
     tellnum        { 12_345_678_901 }
     postnum        { 123 - 4567 }
+    token          { 'tok_kawano' }
+   
   end
 end
