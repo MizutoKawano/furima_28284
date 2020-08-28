@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :arium do
+  factory :payment do
   end
 end

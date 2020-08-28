@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :arium do
+  factory :address do
   end
 end

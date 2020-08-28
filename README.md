@@ -26,7 +26,7 @@
 | category_id | integer    | null:false |
 | status_id   | integer    | null:false |
 | fee_id     | integer    | null:false |
-| aria_id     | integer    | null:false |
+| arium_id     | integer    | null:false |
 | day_id      | integer    | null:false |
 | price       | integer    | null:false |
 | user        | references | null:false, foreign_key: true|
@@ -36,11 +36,11 @@
 - has_one:purchase_address
 - has_one:purchase
 
-## purchase_address
+## order_address
 
 | Column | Type       | Options         |
 | ------ | ---------- | ----------------|
-| prefectures_id | integer | nill:false |
+| arium_id | integer | nill:false |
 | city           | string  | null:false |
 | address        | string  | null:false |
 | build          | string  |            |
@@ -51,7 +51,7 @@
 ### Association
 - belongs_to:item
 
-## purchase 
+## orders 
 | Column | Type       | Options         |
 | ------ | ---------- | ----------------|
 |user    | references | null:false, foreign_key: true |
